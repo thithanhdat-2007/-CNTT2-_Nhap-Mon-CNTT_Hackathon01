@@ -1,25 +1,75 @@
 # BÀI LÀM – HACKATHON 01
 
 - **Mã đề:** 16
-- **Họ tên:** 
-- **Lớp:** 
+- **Họ tên:** Thi Thành Đạt
+- **Lớp:** CNTT2
 - **Link repository:** 
-- **Hệ điều hành (Windows/macOS):** 
+- **Hệ điều hành (Windows/macOS):** Windows
 
 ## 4.2. Thao tác máy tính cơ bản bằng CLI
 
 ### Các lệnh đã chạy
 
 ```shell
-# Ghi lần lượt các lệnh đã chạy, mỗi lệnh một dòng
-
+pwd
+Get-ChildItem .. -Recurse -Force
 ```
 
 ### Kết quả liệt kê toàn bộ dự án (Windows: Get-ChildItem -Recurse -Force; macOS: ls -aR)
 
 ```text
-(Dán kết quả vào đây – xoá dòng này)
+(C:\Users\admin\Downloads\starter-kit\starter-kit)
 
+    Directory: C:\Users\admin\Downloads\starter-kit
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10/28/2026   2:10 PM                starter-kit
+
+
+    Directory: C:\Users\admin\Downloads\starter-kit\starter-kit
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10/28/2026   1:57 PM                backup
+d-----        10/28/2026   2:08 PM                data
+d-----        10/28/2026   1:57 PM                docs
+d-----        10/28/2026   2:08 PM                logs
+d-----        10/28/2026   1:57 PM                media
+d-----        10/28/2026   2:10 PM                sua-may-tinh-website
+-a----        10/27/2026   1:32 AM             72 .env
+------        10/27/2026   1:32 AM           2225 bai_lam.md
+-a----        10/27/2026   1:32 AM             61 Quy Dinh Bao Hanh.txt.txt
+-a----        10/27/2026   1:32 AM             22 temp_241.tmp
+
+
+    Directory: C:\Users\admin\Downloads\starter-kit\starter-kit\data
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/27/2026   1:32 AM           6101 Phieu Sua Thang 6.xlsx.xlsx
+
+
+    Directory: C:\Users\admin\Downloads\starter-kit\starter-kit\logs
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/27/2026   1:32 AM           1069 Repair.Log.log
+
+
+    Directory: C:\Users\admin\Downloads\starter-kit\starter-kit\sua-may-tinh-website
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10/27/2026   1:32 AM           2225 bai_lam.md
+-a----        10/27/2026   1:32 AM           6767 Logo Sua May Tinh.PNG.PNG
+
+rm temp_241.tmp
 ```
 
 ## 4.3. Lọc log thủ công
@@ -27,7 +77,7 @@
 ### Lệnh đã chạy
 
 ```shell
-# Ghi lệnh vào đây (xoá dòng này)
+(Get-Content $log | Select-String -Pattern "CRITICAL", "ERROR" | Measure-Object).Count
 
 ```
 
@@ -54,7 +104,7 @@
 ### Lệnh chạy (Windows: nếu dùng Phụ lục 2 thì ghi cả 2 lệnh)
 
 ```shell
-# Ghi lệnh vào đây (xoá dòng này)
+
 
 ```
 
