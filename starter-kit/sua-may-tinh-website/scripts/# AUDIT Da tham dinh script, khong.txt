@@ -1,0 +1,16 @@
+
+
+$log/repair.log = "logs/auto_report.txt"
+
+Write-Output "========================================" > $HOAN_THIEN
+Write-Output "HOAN_THIEN Bai lam" >> $HOAN_THIEN
+Write-Output "Ngay gio: $(Get-Date -Format 'dd/MM/yyyy HH:mm')" >> $HOAN_THIEN
+Write-Output "========================================" >> $HOAN_THIEN
+
+Get-Content $log | Select-String -Pattern "CRITICAL", "ERROR" | ForEach-Object { $_.Line } >> $HOAN_THIEN
+
+$soLoi = (Get-Content $log | Select-String -Pattern "CRITICAL", "ERROR" | Measure-Object).Count
+
+Write-Output "----------------------------------------" >> $HOAN_THIEN
+Write-Output "TONG SO SU CO:" >> $HOAN_THIEN
+Write-Output $soLoi >> $HOAN_THIEN
